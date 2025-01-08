@@ -1742,6 +1742,18 @@ print(myfunc1())
 
 
 
+def greeting(name):
+  print("Hello, " + name)
+
+
+
+
+
+
+
+import mymodule
+
+mymodule.greeting("Jonathan")
 
 
 
@@ -1750,6 +1762,11 @@ print(myfunc1())
 
 
 
+person1 = {
+  "name": "John",
+  "age": 36,
+  "country": "Norway"
+}
 
 
 
@@ -1758,6 +1775,18 @@ print(myfunc1())
 
 
 
+import mymodule
+a = mymodule.person1["age"]
+print(a)
+
+
+
+
+
+
+import mymodule as mx
+a = mx.person1["age"]
+print(a)
 
 
 
@@ -1766,6 +1795,9 @@ print(myfunc1())
 
 
 
+import platform
+x = platform.system()
+print(x)
 
 
 
@@ -1773,22 +1805,9 @@ print(myfunc1())
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import platform
+x = dir(platform)
+print(x)
 
 
 
