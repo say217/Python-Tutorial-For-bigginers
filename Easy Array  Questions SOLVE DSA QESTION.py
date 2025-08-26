@@ -11,7 +11,24 @@ target = 9
 print(twoSum(nums, target))
 
 # [0, 1]
+----------------------+--+++----------------------------------------
+#All possible values 
+def twoSumAll(nums, target):
+    result = []
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] + nums[j] == target:
+                result.append([i, j])
+    return result
 
+# Test
+nums = [2, 7, 11, 15, -2, 9]
+target = 9
+print(twoSumAll(nums, target))
+
+
+
+----------------------+--+++----------------------------------------
 
 # 02 Best Time to Buy and Sell Stock (LC 121)
 def maxProfit(prices):
@@ -30,6 +47,7 @@ prices = [7,1,5,3,6,4]
 print(maxProfit(prices))
 # output ---- 5
 
+----------------------+--+++----------------------------------------
 
 # 03 Maximum Subarray (Kadane’s Algorithm) (LC 53)
 def maxSubArray(nums):
@@ -50,7 +68,37 @@ print(maxSubArray(nums))
 #output ----- 6
 
 
+----------------------+--+++----------------------
+#all posible subarray 
+def generate_subarrays(arr):
+    n = len(arr)
+    subarrays = []
+    
+    for i in range(n):
+        for j in range(i, n):
+            subarrays.append(arr[i:j+1])
+    
+    return subarrays
 
+
+# Example
+arr = [1, 2, 3]
+result = generate_subarrays(arr)
+
+print("All Subarrays:")
+max_sum = float('-inf')
+
+for sub in result:
+    print(sub)
+    max_sum = max(max_sum, sum(sub))
+
+print("\nMaximum Sum:", max_sum)
+""""[1]
+[1, 2]
+[1, 2, 3]
+[2]
+[2, 3]
+[3].      max sum 6 """
 
 
 
