@@ -101,13 +101,48 @@ print("\nMaximum Sum:", max_sum)
 [3].      max sum 6 """
 
 
+--------------------------------------------
 
+# merge sorted array 
+def merge(nums1, m, nums2, n):
+    # take useful elements from nums1 and nums2
+    arr = nums1[:m] + nums2[:n]
 
+    # sort them
+    arr.sort()
 
+    # put back into nums1
+    for i in range(m+n):
+        nums1[i] = arr[i]
 
+# Example
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+merge(nums1, 3, nums2, 3)
+print(nums1)   # [1,2,2,3,5,6]
+#
 
+--------------------------------------------
+#remove duplicates
 
+def removeDuplicates(nums):
+    # make a new list with only unique values
+    unique = []
+    for x in nums:
+        if x not in unique:
+            unique.append(x)
 
+    # copy back to nums
+    for i in range(len(unique)):
+        nums[i] = unique[i]
+
+    return len(unique)
+
+# Example
+nums = [0,0,1,1,1,2,2,3,3,4]
+k = removeDuplicates(nums)
+print(k)        # 5
+print(nums[:k]) # [0,1,2,3,4]
 
 
 
